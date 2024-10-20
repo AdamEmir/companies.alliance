@@ -65,6 +65,9 @@
                 @endif
                 </tbody>
             </table>
+            <div>
+                {{ $companies->links('pagination::bootstrap-5') }}
+            </div>
         </div>
     </div>
 </div>

@@ -4,13 +4,14 @@ namespace App\Livewire\Companies;
 
 use App\Models\Company;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Index extends Component
 {
+    use WithPagination;
     public function render()
     {
-        $companies = Company::all()
-            ->sortBy('id');
+        $companies = Company::orderBy('id')->paginate(5);
 
         return view('livewire.companies.index',compact('companies'));
     }
